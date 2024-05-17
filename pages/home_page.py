@@ -28,11 +28,8 @@ class HomePage(BasePage):
     def click_samokat_logo(self):
         self.click_to_element(HomePageLocators.samokat_logo)
 
+
     @allure.step("Открываем сайт (https://qa-scooter.praktikum-services.ru/) «Яндекс.Самокат»")
     def open_home_page(self):
         self.open_url(Urls.HOME_PAGE)
         self.wait_element_visibility_of_element_located(HomePageLocators.cookies_button)
-
-    @allure.step("Возвращает URL текущей страницы")
-    def get_current_page_url(self):
-        return self.driver.current_url
